@@ -1,0 +1,33 @@
+{
+  "name": "redirect-device",
+  "version": "0.0.1",
+  "description": "redirect for each devices",
+  "main": "index.html",
+  "scripts": {
+    "dev": "parcel src/index.html -d public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keyiiiii/redirect-device.git"
+  },
+  "keywords": [
+    "redirect",
+    "device",
+    "ua",
+    "url"
+  ],
+  "author": "keyiiiii",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keyiiiii/redirect-device/issues"
+  },
+  "homepage": "https://github.com/keyiiiii/redirect-device#readme",
+  "dependencies": {
+    "query-string": "^6.1.0",
+    "ua-parser-js": "^0.7.18"
+  },
+  "devDependencies": {
+    "parcel": "^1.8.1"
+  }
+}
