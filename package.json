@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "parcel src/index.html -d tmp",
-    "build": "parcel build src/index.html -d docs --no-source-maps",
+    "build": "parcel build src/index.html -d public --no-source-maps",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
