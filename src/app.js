@@ -5,6 +5,7 @@ const getUA = ua();
 const parsed = queryString.parse(location.search);
 const IOS = 'ios';
 const ANDROID = 'android';
+const PC = 'pc';
 
 if (!(parsed[IOS] && parsed[ANDROID])) {
   return false;
@@ -12,18 +13,23 @@ if (!(parsed[IOS] && parsed[ANDROID])) {
 
 const other = {};
 Object.keys(parsed)
-  .filter((key) => !(key === IOS || key === ANDROID))
+  .filter((key) => !(key === IOS || key === ANDROID || key === PC))
   .forEach((key) => other[key] = parsed[key]);
 
 const currentDeviceUA = getUA.os.name;
-const { ios, android } = parsed;
+const { ios, android, pc } = parsed;
 const otherQuery = queryString.stringify(other);
 
 switch (currentDeviceUA.toLowerCase()) {
   case IOS:
-    location.href = `${ios}&${otherQuery}`;
+    location.href = `${ios}?${otherQuery}`;
     break;
   case ANDROID:
-    location.href = `${android}&${otherQuery}`;
+    location.href = `${android}?${otherQuery}`;
+    break;
+  default:
+    if (pc) {
+      location.href = `${pc}?${otherQuery}`;
+    }
     break;
 }
